@@ -25,16 +25,19 @@
       background: var(--secondary);
       color: var(--text-dark);
       overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
     }
 
     header {
       background: var(--primary);
       color: white;
-      padding: 1.5rem 1rem 3rem;
+      padding: 1.5rem;
       text-align: center;
       border-bottom: 5px double var(--gold);
       position: relative;
       overflow: hidden;
+      z-index: 10;
     }
 
     header h1 {
@@ -43,13 +46,12 @@
       letter-spacing: 2px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
       position: relative;
-      z-index: 5;
-      margin-bottom: 1rem;
+      display: inline-block;
+      z-index: 10;
     }
 
     nav {
-      position: relative;
-      z-index: 5;
+      margin-top: 10px;
     }
 
     nav a {
@@ -57,214 +59,139 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.1rem;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
-    /* Starry Night Background */
+    /* Birds flying animation */
+    .bird {
+      position: absolute;
+      top: 15px;
+      width: 40px;
+      opacity: 0.85;
+      animation-timing-function: linear;
+      z-index: 15;
+    }
+    .bird1 {
+      left: -50px;
+      animation: flyRight 30s linear infinite;
+      animation-delay: 0s;
+    }
+    .bird2 {
+      left: -100px;
+      top: 40px;
+      width: 35px;
+      animation: flyRight 35s linear infinite;
+      animation-delay: 10s;
+    }
+    .bird3 {
+      left: -150px;
+      top: 60px;
+      width: 30px;
+      animation: flyRight 40s linear infinite;
+      animation-delay: 20s;
+    }
+
+    @keyframes flyRight {
+      0% { transform: translateX(0) translateY(0); }
+      50% { transform: translateX(50vw) translateY(-10px); }
+      100% { transform: translateX(100vw) translateY(0); }
+    }
+
+    /* Hero Section with starry night background */
     .hero {
       position: relative;
       height: 100vh;
-      background: linear-gradient(to bottom, #00111a, #000000);
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       color: #fffaf0;
+      text-align: center;
       font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
-      text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      padding: 0 20px;
       z-index: 1;
     }
 
-    /* Stars Container */
+    /* Stars container */
     .stars {
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0; left: 0;
-      background: transparent;
+      pointer-events: none;
+      overflow: hidden;
       z-index: 0;
     }
 
-    /* Generate multiple stars */
-    .stars div {
+    .star {
       position: absolute;
       background: white;
       border-radius: 50%;
-      opacity: 0.8;
-      animation: twinkle 4s infinite alternate;
+      opacity: 0.6;
+      animation: twinkle 3s infinite alternate ease-in-out;
     }
 
-    /* Random sized stars with different positions and animation delays */
-    .stars div:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 15%; animation-delay: 0s; }
-    .stars div:nth-child(2) { width: 3px; height: 3px; top: 25%; left: 70%; animation-delay: 1s; }
-    .stars div:nth-child(3) { width: 1.5px; height: 1.5px; top: 45%; left: 40%; animation-delay: 2s; }
-    .stars div:nth-child(4) { width: 2.5px; height: 2.5px; top: 60%; left: 85%; animation-delay: 3s; }
-    .stars div:nth-child(5) { width: 2px; height: 2px; top: 80%; left: 20%; animation-delay: 1.5s; }
-    .stars div:nth-child(6) { width: 3px; height: 3px; top: 90%; left: 60%; animation-delay: 0.5s; }
-
     @keyframes twinkle {
-      0% { opacity: 0.4; }
+      0% { opacity: 0.2; }
       100% { opacity: 1; }
     }
 
-    /* Bird animation container */
-    .bird-container {
-      position: absolute;
-      top: 35px;
-      left: -80px;
-      width: 60px;
-      height: 60px;
-      z-index: 4;
-      animation: flyRight 20s linear infinite;
-    }
-
-    .bird-container:nth-child(2) {
-      top: 60px;
-      animation-delay: 7s;
-      width: 50px;
-      height: 50px;
-    }
-
-    .bird-container:nth-child(3) {
-      top: 80px;
-      animation-delay: 14s;
-      width: 55px;
-      height: 55px;
-    }
-
-    @keyframes flyRight {
-      0% { left: -80px; opacity: 0; transform: translateY(0) rotate(0deg); }
-      10% { opacity: 1; }
-      50% { left: 110vw; transform: translateY(-20px) rotate(15deg); opacity: 1;}
-      90% { opacity: 1; }
-      100% { left: 110vw; opacity: 0; transform: translateY(0) rotate(0deg); }
-    }
-
-    /* Simple bird shape using CSS */
-    .bird {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-origin: center;
-      animation: flapWings 1s ease-in-out infinite;
-    }
-
-    .wing {
-      position: absolute;
-      background: white;
-      width: 20px;
-      height: 8px;
-      border-radius: 10px 10px 0 0;
-      top: 15px;
-      left: 20px;
-      transform-origin: left center;
-      box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    }
-
-    .wing.right {
-      left: auto;
-      right: 20px;
-      border-radius: 10px 10px 0 0;
-      transform-origin: right center;
-    }
-
-    @keyframes flapWings {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(20deg); }
-    }
-
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #fffefc;
-      border: 1px solid var(--accent);
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      position: relative;
-      z-index: 10;
-    }
-
-    section h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    section p, section li {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #333;
-    }
-
-    #contact ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    #contact li {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
-    }
-
-    #contact a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    #contact a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-      position: relative;
-      z-index: 10;
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <!-- 3 animated birds flying across -->
-    <div class="bird-container" style="animation-delay: 0s;">
-      <div class="bird">
-        <div class="wing"></div>
-        <div class="wing right"></div>
-      </div>
-    </div>
-    <div class="bird-container" style="animation-delay: 7s;">
-      <div class="bird">
-        <div class="wing"></div>
-        <div class="wing right"></div>
-      </div>
-    </div>
-    <div class="bird-container" style="animation-delay: 14s;">
-      <div class="bird">
-        <div class="wing"></div>
-        <div class="wing right"></div>
-      </div>
-    </div>
-
     <h1>Darpan Vastra</h1>
+    <!-- Birds flying near brand name -->
+    <img src="https://i.gifer.com/7VE.gif" alt="Bird flying" class="bird bird1" />
+    <img src="https://i.gifer.com/7VE.gif" alt="Bird flying" class="bird bird2" />
+    <img src="https://i.gifer.com/7VE.gif" alt="Bird flying" class="bird bird3" />
+
     <nav>
       <a href="#about">About</a>
       <a href="#collections">Collections</a>
       <a href="#contact">Contact</a>
-      <a href="https://instagram.com/_darpanvastra_" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://instagram.com/_darpanvastra_" target="_blank">Instagram</a>
     </nav>
   </header>
 
   <section class="hero">
-    <div
+    Where you see yourself in every thread.
+    <div class="stars"></div>
+  </section>
 
-  Delete index.html
+  <section id="about" style="max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fffefc; border: 1px solid #e6d0c4; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); color: #3a2f2f; font-family: 'Crimson Text', serif;">
+    <h2 style="font-family: 'Playfair Display', serif; color: #8B3A3A; margin-bottom: 1rem;">About Us</h2>
+    <p>
+      Darpan Vastra is a reflection of timeless Indian tradition. We offer curated apparel for women and girls seeking elegance in everyday and festive moments. From intricate kurtas to flowing sarees, every piece is crafted with love and culture.
+    </p>
+  </section>
+
+  <section id="collections" style="max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fffefc; border: 1px solid #e6d0c4; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); color: #3a2f2f; font-family: 'Crimson Text', serif;">
+    <h2 style="font-family: 'Playfair Display', serif; color: #8B3A3A; margin-bottom: 1rem;">Our Collections</h2>
+    <ul style="font-size: 1.1rem; line-height: 1.7;">
+      <li>• Traditional Sarees and Salwar Suits</li>
+      <li>• Everyday Kurtis and Sets</li>
+      <li>• Occasion & Festive Wear</li>
+    </ul>
+  </section>
+
+  <section id="contact" style="max-width: 800px; margin: 2rem auto 4rem auto; padding: 1rem; background: #fffefc; border: 1px solid #e6d0c4; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); color: #3a2f2f; font-family: 'Crimson Text', serif;">
+    <h2 style="font-family: 'Playfair Display', serif; color: #8B3A3A; margin-bottom: 1rem;">Contact Us</h2>
+    <ul style="list-style:none; padding: 0;">
+      <li>📞 R: <a href="tel:+919327045197" style="color:#8B3A3A; text-decoration:none;">9327045197</a></li>
+      <li>📞 D: <a href="tel:+918849699764" style="color:#8B3A3A; text-decoration:none;">8849699764</a></li>
+      <li>📧 Email: <a href="mailto:namaste.darpan@gmail.com" style="color:#8B3A3A; text-decoration:none;">namaste.darpan@gmail.com</a></li>
+      <li>📸 Instagram: <a href="https://instagram.com/_darpanvastra_" target="_blank" style="color:#8B3A3A; text-decoration:none;">@_darpanvastra_</a></li>
+    </ul>
+  </section>
+
+  <footer style="background: #8B3A3A; color: white; text-align: center; padding: 1rem; margin-top: 3rem;">
+    <p>© 2025 Darpan Vastra — Tradition in Every Thread</
