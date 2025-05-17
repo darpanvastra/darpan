@@ -84,7 +84,7 @@
     padding: 0 1rem;
   }
 
-  /* Animated message with typing and gradient */
+  /* New animated message: slide-up + glowing pulse */
   .animated-message {
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
@@ -92,22 +92,30 @@
     margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 4px solid var(--accent);
-    animation: typing 5s steps(30, end), blink-caret 0.75s step-end infinite;
-    background: linear-gradient(90deg, #b47e56, #6b4226, #d9c5b2);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: #b76e79; /* warm dusty pink */
+    animation: slideUpGlow 4s ease-in-out infinite alternate;
+    text-shadow: 0 0 8px rgba(183,110,121, 0.7);
   }
 
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 30ch }
-  }
-
-  @keyframes blink-caret {
-    0%, 100% { border-color: transparent }
-    50% { border-color: var(--accent) }
+  @keyframes slideUpGlow {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+      color: #b76e79;
+      text-shadow: 0 0 0 rgba(183,110,121, 0);
+    }
+    50% {
+      transform: translateY(0);
+      opacity: 1;
+      color: #d9a066; /* soft gold */
+      text-shadow: 0 0 12px rgba(217,160,102, 0.9);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      color: #b76e79;
+      text-shadow: 0 0 8px rgba(183,110,121, 0.7);
+    }
   }
 
   /* Contact section */
