@@ -6,6 +6,11 @@
   <title>Darpan Vastra - Traditional & Timeless</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #8b3a3a;
+      --light: #fffaf6;
+      --accent: #fff0e6;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -13,12 +18,12 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #fffaf6;
+      background-color: var(--light);
       color: #333;
       line-height: 1.6;
     }
     header {
-      background-color: #fff0e6;
+      background-color: var(--accent);
       padding: 1.5rem;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -26,37 +31,43 @@
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      color: #8b3a3a;
+      color: var(--primary);
     }
     nav {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
       margin-top: 1rem;
     }
     nav a {
       text-decoration: none;
-      color: #8b3a3a;
+      color: var(--primary);
       font-weight: 600;
     }
     .hero {
       background: url('https://source.unsplash.com/featured/?indian,fashion') center/cover no-repeat;
-      height: 80vh;
+      height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      text-align: center;
+      padding: 2rem;
     }
     .hero h2 {
-      font-size: 3rem;
-      text-align: center;
-      padding: 1rem;
+      font-size: 2.5rem;
     }
     section {
       padding: 3rem 2rem;
       max-width: 1200px;
       margin: auto;
+    }
+    h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
     }
     .collection {
       display: grid;
@@ -64,7 +75,7 @@
       gap: 2rem;
     }
     .item {
-      background-color: #fff;
+      background-color: white;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -75,19 +86,41 @@
     }
     .item h3 {
       padding: 1rem;
-      color: #8b3a3a;
+      color: var(--primary);
       font-family: 'Playfair Display', serif;
     }
     footer {
-      background-color: #fff0e6;
+      background-color: var(--accent);
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
     }
     .insta {
-      color: #8b3a3a;
+      color: var(--primary);
       text-decoration: none;
       font-weight: 600;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: inherit;
+    }
+    button {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -98,17 +131,18 @@
       <a href="#about">About</a>
       <a href="#collection">Collections</a>
       <a href="#contact">Contact</a>
+      <a href="https://instagram.com/__darpanvastra_" target="_blank">Instagram</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Reflections of Tradition, Everyday Elegance</h2>
+    <h2>Where Tradition Meets Everyday Grace</h2>
   </section>
 
   <section id="about">
-    <h2>About Darpan</h2>
+    <h2>About Us</h2>
     <p>
-      Darpan is a women’s clothing brand that blends the grace of tradition with the ease of everyday wear. From festive occasions to casual gatherings, our designs reflect the timeless charm of Indian craftsmanship.
+      Darpan is a women's clothing brand rooted in Indian tradition, designed for everyday elegance and festive occasions alike. We blend classical patterns with modern comfort, bringing heritage into your wardrobe.
     </p>
   </section>
 
@@ -131,12 +165,17 @@
   </section>
 
   <section id="contact">
-    <h2>Connect With Us</h2>
-    <p>Follow us on Instagram: <a class="insta" href="https://instagram.com/__darpanvastra_" target="_blank">@__darpanvastra_</a></p>
-    <p>Email: contact@darpanvastra.com</p>
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
+    <p>Follow us on Instagram: <a class="insta" href="https://instagram.com/__darpanvastra_" target="_blank">@__darpanvastra_</a></p>
     <p>&copy; 2025 Darpan Vastra. All rights reserved.</p>
   </footer>
 </body>
