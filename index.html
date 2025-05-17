@@ -77,10 +77,16 @@
       border-radius: 8px;
       cursor: pointer;
       transition: transform 0.3s ease;
+      object-fit: cover;
+      width: 70px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      background: white;
+      padding: 5px;
     }
 
     .cloth-stickers img:hover {
       transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
 
     nav {
@@ -198,6 +204,8 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
       cursor: pointer;
+      object-fit: cover;
+      height: 250px;
     }
 
     .gallery img:hover {
@@ -214,6 +222,11 @@
       }
       .gallery img {
         max-width: 140px;
+        height: 180px;
+      }
+      .cloth-stickers img {
+        width: 50px;
+        height: 50px;
       }
     }
   </style>
@@ -222,10 +235,11 @@
   <header>
     <h1>Darpan Vastra</h1>
     <div class="cloth-stickers">
-      <img src="images/dress1.jpg" alt="Dress 1" />
-      <img src="images/dress2.jpg" alt="Dress 2" />
-      <img src="images/dress3.jpg" alt="Dress 3" />
-      <!-- Add more images as needed -->
+      <!-- Using Unsplash & Pixabay images for cloth stickers -->
+      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=70&q=80" alt="Traditional Saree" />
+      <img src="https://images.unsplash.com/photo-1542068829-1115a0158c04?auto=format&fit=crop&w=70&q=80" alt="Kurti Dress" />
+      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=70&q=80" alt="Festive Outfit" />
+      <img src="https://cdn.pixabay.com/photo/2016/03/27/19/16/woman-1284413_1280.jpg" alt="Elegant Dress" style="height:70px; width:70px; object-fit: cover;"/>
     </div>
     <nav>
       <a href="#about">About</a>
@@ -259,12 +273,12 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="images/dress1.jpg" alt="Dress 1" />
-      <img src="images/dress2.jpg" alt="Dress 2" />
-      <img src="images/dress3.jpg" alt="Dress 3" />
-      <!-- Add your own images below -->
-      <img src="images/dress4.jpg" alt="Dress 4" />
-      <img src="images/dress5.jpg" alt="Dress 5" />
+      <!-- Example gallery images from Unsplash, replace with your own if you want -->
+      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=400&q=80" alt="Saree 1" />
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=400&q=80" alt="Kurti 1" />
+      <img src="https://images.unsplash.com/photo-1520975911904-9a9a1d473dd0?auto=format&fit=crop&w=400&q=80" alt="Festive Wear 1" />
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="Elegant Dress 1" />
+      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" alt="Festive Outfit 1" />
     </div>
   </section>
 
@@ -283,3 +297,4 @@
   </footer>
 </body>
 </html>
+
