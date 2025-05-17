@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Darpan Vastra - Tradition Woven in Style</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Crimson+Text&family=Yatra+One&display=swap" rel="stylesheet">
   <style>
@@ -33,7 +33,6 @@
       padding: 2rem;
       text-align: center;
       border-bottom: 5px double var(--gold);
-      position: relative;
     }
 
     header h1 {
@@ -44,12 +43,14 @@
     }
 
     .birds-decor {
-      margin-top: 1rem;
+      margin: 1rem 0;
     }
 
-    .birds-decor img {
-      height: 60px;
+    .birds-decor svg {
+      width: 40px;
+      height: auto;
       margin: 0 10px;
+      fill: white;
     }
 
     nav a {
@@ -64,7 +65,7 @@
     }
 
     .hero {
-      background: url('https://i.ibb.co/gym3kDc/beach-sunset-women-clothes.jpg') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -125,8 +126,10 @@
   <header>
     <h1>Darpan Vastra</h1>
     <div class="birds-decor">
-      <img src="https://i.ibb.co/XC4xBbr/bird-sketch-left.png" alt="Bird Sketch">
-      <img src="https://i.ibb.co/WfXKP0C/bird-sketch-right.png" alt="Bird Sketch">
+      <!-- Left Bird -->
+      <svg viewBox="0 0 24 24"><path d="M16 4a4 4 0 0 0-4 4c0 2-2 3-3 4s-1 2-1 2-1-1-2-1c-1 0-2 1-2 2s1 3 3 3c1 0 1-1 2-1s1 1 2 1 1-1 2-1 2 1 3 1 3-2 3-4c0-3-2-5-4-6s-2-1-2-2a2 2 0 1 1 4 0z"/></svg>
+      <!-- Right Bird -->
+      <svg viewBox="0 0 24 24"><path d="M8 4a4 4 0 0 1 4 4c0 2 2 3 3 4s1 2 1 2 1-1 2-1c1 0 2 1 2 2s-1 3-3 3c-1 0-1-1-2-1s-1 1-2 1-1-1-2-1-2 1-3 1-3-2-3-4c0-3 2-5 4-6s2-1 2-2a2 2 0 1 0-4 0z"/></svg>
     </div>
     <nav>
       <a href="#about">About</a>
