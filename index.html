@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Darpan Vastra - Tradition Woven in Style</title>
 
-  <!-- Fonts: Elegant and stylish -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Crimson+Text&family=Yatra+One&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --primary: #8B3A3A;
-      --secondary: #fff9f4;
+      --secondary: #f9f3ef;
       --accent: #e6d0c4;
       --gold: #c7a17a;
       --text-dark: #3a2f2f;
@@ -25,22 +25,15 @@
     }
 
     body {
-      font-family: 'Merriweather', serif;
-      background: linear-gradient(135deg, #fff9f4 0%, #f7f1e9 100%);
+      font-family: 'Crimson Text', serif;
+      background: linear-gradient(135deg, #f7f1e9 0%, #eedfcc 100%);
       color: var(--text-dark);
       overflow-x: hidden;
       line-height: 1.6;
       min-height: 100vh;
-    }
-
-    /* Animate brand name with subtle glow */
-    @keyframes glow {
-      0%, 100% {
-        text-shadow: 0 0 5px var(--gold), 0 0 10px var(--gold);
-      }
-      50% {
-        text-shadow: 0 0 15px var(--gold), 0 0 25px var(--gold);
-      }
+      background-image:
+        radial-gradient(circle at top left, rgba(199, 161, 122, 0.1), transparent 70%),
+        radial-gradient(circle at bottom right, rgba(199, 161, 122, 0.15), transparent 70%);
     }
 
     header {
@@ -56,23 +49,23 @@
 
     /* Brand Name styling */
     header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4rem;
+      font-family: 'Yatra One', cursive;
+      font-size: 3.8rem;
       letter-spacing: 3px;
       margin-bottom: 0.3rem;
-      animation: glow 3s ease-in-out infinite;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
       cursor: default;
       user-select: none;
     }
 
-    /* Tagline under brand name */
+    /* Tagline */
     header .tagline {
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
       letter-spacing: 1.5px;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--gold);
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.12);
       margin-bottom: 1.5rem;
     }
 
@@ -86,7 +79,7 @@
       color: var(--gold);
       margin: 0 18px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       transition: color 0.3s ease, transform 0.2s ease;
@@ -115,29 +108,35 @@
     }
 
     .hero {
-      background: linear-gradient(to bottom, #fff9f4, #f0ebe4);
-      height: 70vh;
+      background: linear-gradient(120deg, #fff6e8, #f3e5d4);
+      height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
       animation: fadeIn 1s ease forwards;
       animation-delay: 0.3s;
+      box-shadow: inset 0 0 150px 40px rgba(199, 161, 122, 0.25);
+      border-radius: 20px;
+      margin: 2rem auto;
+      max-width: 900px;
     }
 
     .hero h2 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-family: 'Playfair Display', serif;
+      font-weight: 700;
       color: var(--primary);
-      padding: 1.2rem 2.5rem;
+      padding: 1.8rem 3rem;
       border: 3px solid var(--gold);
       background-color: #fffdf9cc;
-      border-radius: 16px;
+      border-radius: 20px;
       box-shadow: 0 6px 16px rgba(199, 161, 122, 0.3);
       max-width: 700px;
       margin: 0 auto;
-      line-height: 1.3;
+      line-height: 1.25;
+      user-select: none;
     }
 
     section {
@@ -162,7 +161,7 @@
     }
 
     #about p {
-      font-size: 1.2rem;
+      font-size: 1.22rem;
       line-height: 1.8;
       color: var(--text-dark);
     }
@@ -252,7 +251,7 @@
       padding: 1.2rem;
       margin-top: 4rem;
       font-size: 1rem;
-      font-family: 'Merriweather', serif;
+      font-family: 'Crimson Text', serif;
       box-shadow: 0 -4px 10px var(--shadow);
     }
 
@@ -268,7 +267,7 @@
       }
     }
 
-    /* Responsive adjustments */
+    /* Responsive */
     @media (max-width: 768px) {
       header h1 {
         font-size: 3rem;
@@ -322,41 +321,40 @@
   <section id="about">
     <h2>About Us</h2>
     <p>
-      Darpan Vastra is a reflection of timeless Indian tradition. We offer handcrafted clothing that celebrates culture and elegance.
+      Darpan Vastra is a reflection of timeless Indian tradition. We offer handcrafted clothing that celebrates culture and elegance, tailored for women and girls who cherish everyday grace and festive charm.
     </p>
   </section>
 
   <section id="collections">
-    <h2>Collections</h2>
+    <h2>Our Collections</h2>
     <ul>
-      <li>Traditional Sarees</li>
-      <li>Elegant Kurtis</li>
-      <li>Festive Outfits</li>
-      <li>Modern Ethnic Wear</li>
+      <li>Traditional Sarees and Salwar Suits</li>
+      <li>Everyday Kurtis and Sets</li>
+      <li>Occasion & Festive Wear</li>
     </ul>
   </section>
 
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=600&q=80" alt="Traditional Saree" />
-      <img src="https://images.unsplash.com/photo-1542068829-1115a0158c04?auto=format&fit=crop&w=600&q=80" alt="Kurti Dress" />
-      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80" alt="Festive Outfit" />
-      <img src="https://cdn.pixabay.com/photo/2016/03/27/19/16/woman-1284413_1280.jpg" alt="Elegant Dress" />
+      <img src="https://i.ibb.co/0QqPb3X/fashion-dress-1.png" alt="Elegant Saree" />
+      <img src="https://i.ibb.co/wrsd2ft/fashion-dress-2.png" alt="Festive Salwar Suit" />
+      <img src="https://i.ibb.co/sR1Xw5C/fashion-dress-3.png" alt="Everyday Kurti" />
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2>Contact Us</h2>
     <ul>
-      <li>Email: <a href="mailto:contact@darpanvastra.com">contact@darpanvastra.com</a></li>
-      <li>Phone: <a href="tel:+919876543210">+91 98765 43210</a></li>
-      <li>Instagram: <a href="https://instagram.com/_darpanvastra_" target="_blank" rel="noopener noreferrer">@_darpanvastra_</a></li>
+      <li>📞 R: <a href="tel:+919327045197">9327045197</a></li>
+      <li>📞 D: <a href="tel:+918849699764">8849699764</a></li>
+      <li>📧 Email: <a href="mailto:namaste.darpan@gmail.com">namaste.darpan@gmail.com</a></li>
+      <li>📸 Instagram: <a href="https://instagram.com/_darpanvastra_" target="_blank" rel="noopener noreferrer">@_darpanvastra_</a></li>
     </ul>
   </section>
 
   <footer>
-    &copy; 2025 Darpan Vastra. All rights reserved.
+    <p>© 2025 Darpan Vastra — Tradition in Every Thread</p>
   </footer>
 </body>
 </html>
