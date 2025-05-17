@@ -50,4 +50,216 @@
       color: var(--highlight);
     }
 
-    /* Hero*
+    /* Hero Section with background image + overlay */
+    .hero {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.8rem;
+      padding: 0 1rem;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      filter: brightness(0.55);
+      z-index: -2;
+      transition: transform 10s ease-in-out infinite alternate;
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(124,42,42,0.7), rgba(237, 194, 152, 0.7));
+      z-index: -1;
+    }
+
+    /* Animated text effect - typing + color fade */
+    .animated-text {
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid white;
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      max-width: 22ch; /* about 22 characters wide */
+      margin: auto;
+      color: #fff;
+    }
+
+    /* Slow zoom for background */
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    /* Typing text effect */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 22ch; }
+    }
+    /* Cursor blink effect */
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: white; }
+    }
+
+    /* Floating particles shapes behind text */
+    .floating-shapes {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+    .floating-shapes div {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      animation: float 6s ease-in-out infinite;
+    }
+    .floating-shapes div:nth-child(1) {
+      width: 40px;
+      height: 40px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    .floating-shapes div:nth-child(2) {
+      width: 60px;
+      height: 60px;
+      top: 70%;
+      left: 20%;
+      animation-delay: 2s;
+    }
+    .floating-shapes div:nth-child(3) {
+      width: 30px;
+      height: 30px;
+      top: 40%;
+      left: 75%;
+      animation-delay: 4s;
+    }
+    .floating-shapes div:nth-child(4) {
+      width: 50px;
+      height: 50px;
+      top: 80%;
+      left: 65%;
+      animation-delay: 1.5s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* Other styles unchanged */
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+    }
+    /* ... rest of your styles from before ... */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Darpan Vastra</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#collections">Collections</a>
+      <a href="#contact">Contact</a>
+      <a href="https://instagram.com/__darpanvastra_" target="_blank">Instagram</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="floating-shapes">
+      <div></div><div></div><div></div><div></div>
+    </div>
+    <h2 class="animated-text">Celebrating Womanhood with Tradition & Style</h2>
+  </section>
+
+  <!-- Your other sections unchanged but add the visible class script -->
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At <strong>Darpan Vastra</strong>, we blend traditional Indian aesthetics with everyday wearability. From casual kurtis to grand festive lehengas, our pieces are handcrafted to make every woman feel graceful and rooted in culture.
+    </p>
+  </section>
+
+  <section id="collections">
+    <h2>Our Collections</h2>
+    <div class="collections">
+      <div class="item">
+        <img src="https://source.unsplash.com/featured/?saree" alt="Saree" />
+        <h3>Timeless Sarees</h3>
+      </div>
+      <div class="item">
+        <img src="https://source.unsplash.com/featured/?kurti" alt="Kurtis" />
+        <h3>Elegant Kurtis</h3>
+      </div>
+      <div class="item">
+        <img src="https://source.unsplash.com/featured/?lehenga" alt="Lehengas" />
+        <h3>Festive Lehengas</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you!</p>
+    <ul>
+      <li>📞 <strong>Phone:</strong> 9327045197</li>
+      <li>📧 <strong>Email:</strong> <a href="mailto:namaste.darpan@gmail.com">namaste.darpan@gmail.com</a></li>
+      <li>📸 <strong>Instagram:</strong> <a href="https://instagram.com/__darpanvastra_" target="_blank">@__darpanvastra_</a></li>
+    </ul>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Darpan Vastra — All Rights Reserved</p>
+    <p>Follow us on <a href="https://instagram.com/__darpanvastra_" target="_blank">Instagram</a></p>
+  </footer>
+
+  <script>
+    // Scroll animation for sections
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
