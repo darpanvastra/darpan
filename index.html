@@ -84,42 +84,30 @@
     padding: 0 1rem;
   }
 
-  /* Animated typing text */
-  .animated-text {
+  /* Animated message with typing and gradient */
+  .animated-message {
     font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
-    border-right: 3px solid var(--accent);
+    font-size: 2.8rem;
+    max-width: 30ch;
+    margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 26ch;
-    margin: 0 auto;
-    animation:
-      typing 4s steps(26, end),
-      blink-caret 0.75s step-end infinite;
+    border-right: 4px solid var(--accent);
+    animation: typing 5s steps(30, end), blink-caret 0.75s step-end infinite;
+    background: linear-gradient(90deg, #b47e56, #6b4226, #d9c5b2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
 
   @keyframes typing {
     from { width: 0 }
-    to { width: 26ch }
+    to { width: 30ch }
   }
+
   @keyframes blink-caret {
     0%, 100% { border-color: transparent }
     50% { border-color: var(--accent) }
-  }
-
-  /* New tagline fade-in */
-  .tagline {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    margin-top: 1rem;
-    color: var(--accent);
-    opacity: 0;
-    animation: fadeIn 3s ease forwards 4.5s;
-  }
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
   }
 
   /* Contact section */
@@ -164,12 +152,9 @@
     header h1 {
       font-size: 2rem;
     }
-    .animated-text {
+    .animated-message {
       font-size: 1.8rem;
       max-width: 22ch;
-    }
-    .tagline {
-      font-size: 1.1rem;
     }
   }
 </style>
@@ -188,10 +173,7 @@
 
 <section class="hero" aria-label="Brand introduction">
   <div class="hero-content">
-    <h2 class="animated-text">
-      Embrace Tradition. Celebrate Everyday Elegance.
-    </h2>
-    <p class="tagline">Where you see yourself in every thread.</p>
+    <h2 class="animated-message">Where you see yourself in every thread.</h2>
   </div>
 </section>
 
