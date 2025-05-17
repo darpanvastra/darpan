@@ -24,6 +24,7 @@
       font-family: 'Crimson Text', serif;
       background: var(--secondary);
       color: var(--text-dark);
+      overflow-x: hidden;
     }
 
     header {
@@ -60,55 +61,26 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
-    /* Bird shape using CSS */
-    .bird {
+    .bird-gif {
       position: absolute;
       top: 10px;
-      width: 40px;
-      height: 30px;
-      background: transparent;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      box-shadow: inset 0 0 5px 2px #fff;
-      border: 2px solid #fff;
-      animation: fly 15s linear infinite;
-      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
-    }
-    .bird::before,
-    .bird::after {
-      content: '';
-      position: absolute;
-      background: white;
-      border-radius: 50%;
-    }
-    .bird::before {
-      width: 20px;
-      height: 20px;
-      left: -10px;
-      top: 5px;
-      transform: rotate(20deg);
-      box-shadow: inset 0 0 3px 1px #ccc;
-    }
-    .bird::after {
-      width: 18px;
-      height: 18px;
-      right: -10px;
-      top: 5px;
-      transform: rotate(-20deg);
-      box-shadow: inset 0 0 3px 1px #ccc;
+      width: 60px;
+      animation: flyAcross 30s linear infinite;
+      z-index: 2;
     }
 
-    .bird:nth-child(1) { left: -50px; animation-delay: 0s; top: 15px; }
-    .bird:nth-child(2) { left: -100px; animation-delay: 7s; top: 50px; }
+    .bird-gif:nth-child(1) { left: -70px; animation-delay: 0s; }
+    .bird-gif:nth-child(2) { left: -150px; animation-delay: 12s; }
+    .bird-gif:nth-child(3) { left: -220px; animation-delay: 6s; }
 
-    @keyframes fly {
-      0% { transform: translateX(0) translateY(0) rotate(0deg); }
-      50% { transform: translateX(50vw) translateY(-20px) rotate(10deg); }
-      100% { transform: translateX(110vw) translateY(0) rotate(0deg); }
+    @keyframes flyAcross {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120vw); }
     }
 
     .hero {
-      background: url('https://i.imgur.com/6IUBX6L.jpg') no-repeat center/cover;
-      height: 70vh;
+      background: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -125,16 +97,17 @@
     }
 
     .hero h2 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-family: 'Playfair Display', serif;
       z-index: 1;
-      animation: fadeIn 2.5s ease;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      animation: fadeInUp 3s ease-in-out infinite alternate;
+      color: #fffaf0;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInUp {
+      0% { transform: translateY(10px); opacity: 0.7; }
+      100% { transform: translateY(-10px); opacity: 1; }
     }
 
     section {
@@ -190,8 +163,9 @@
 <body>
 
   <header>
-    <div class="bird"></div>
-    <div class="bird"></div>
+    <img class="bird-gif" src="https://i.gifer.com/7VE.gif" alt="Flying Bird" />
+    <img class="bird-gif" src="https://i.gifer.com/7VE.gif" alt="Flying Bird" />
+    <img class="bird-gif" src="https://i.gifer.com/7VE.gif" alt="Flying Bird" />
     <h1>Darpan Vastra</h1>
     <nav>
       <a href="#about">About</a>
