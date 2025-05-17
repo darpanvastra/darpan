@@ -30,7 +30,7 @@
     header {
       background: var(--primary);
       color: white;
-      padding: 1.5rem;
+      padding: 1.5rem 1rem 3rem;
       text-align: center;
       border-bottom: 5px double var(--gold);
       position: relative;
@@ -42,15 +42,14 @@
       font-size: 3rem;
       letter-spacing: 2px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-      animation: slideIn 2s ease-out;
       position: relative;
-      z-index: 3;
+      z-index: 5;
+      margin-bottom: 1rem;
     }
 
     nav {
-      margin-top: 1rem;
       position: relative;
-      z-index: 3;
+      z-index: 5;
     }
 
     nav a {
@@ -64,59 +63,119 @@
       text-decoration: underline;
     }
 
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .bird-gif {
-      position: absolute;
-      top: 20px;
-      width: 60px;
-      animation: flyAcross 30s linear infinite;
-      z-index: 2;
-    }
-
-    .bird-gif:nth-child(1) { left: -80px; animation-delay: 0s; }
-    .bird-gif:nth-child(2) { left: -180px; animation-delay: 10s; }
-    .bird-gif:nth-child(3) { left: -280px; animation-delay: 20s; }
-
-    @keyframes flyAcross {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(120vw); }
-    }
-
+    /* Starry Night Background */
     .hero {
-      background: url('https://i.ibb.co/QmPPRf2/night-sky-stars.gif') no-repeat center center/cover;
+      position: relative;
       height: 100vh;
+      background: linear-gradient(to bottom, #00111a, #000000);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
       text-align: center;
-      color: white;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      color: #fffaf0;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
       z-index: 1;
     }
 
-    .hero h2 {
-      font-size: 2.8rem;
-      font-family: 'Playfair Display', serif;
-      z-index: 2;
-      animation: fadeInUp 3s ease-in-out infinite alternate;
-      color: #fffaf0;
-      text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+    /* Stars Container */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      background: transparent;
+      z-index: 0;
     }
 
-    @keyframes fadeInUp {
-      0% { transform: translateY(10px); opacity: 0.7; }
-      100% { transform: translateY(-10px); opacity: 1; }
+    /* Generate multiple stars */
+    .stars div {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 4s infinite alternate;
+    }
+
+    /* Random sized stars with different positions and animation delays */
+    .stars div:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 15%; animation-delay: 0s; }
+    .stars div:nth-child(2) { width: 3px; height: 3px; top: 25%; left: 70%; animation-delay: 1s; }
+    .stars div:nth-child(3) { width: 1.5px; height: 1.5px; top: 45%; left: 40%; animation-delay: 2s; }
+    .stars div:nth-child(4) { width: 2.5px; height: 2.5px; top: 60%; left: 85%; animation-delay: 3s; }
+    .stars div:nth-child(5) { width: 2px; height: 2px; top: 80%; left: 20%; animation-delay: 1.5s; }
+    .stars div:nth-child(6) { width: 3px; height: 3px; top: 90%; left: 60%; animation-delay: 0.5s; }
+
+    @keyframes twinkle {
+      0% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+
+    /* Bird animation container */
+    .bird-container {
+      position: absolute;
+      top: 35px;
+      left: -80px;
+      width: 60px;
+      height: 60px;
+      z-index: 4;
+      animation: flyRight 20s linear infinite;
+    }
+
+    .bird-container:nth-child(2) {
+      top: 60px;
+      animation-delay: 7s;
+      width: 50px;
+      height: 50px;
+    }
+
+    .bird-container:nth-child(3) {
+      top: 80px;
+      animation-delay: 14s;
+      width: 55px;
+      height: 55px;
+    }
+
+    @keyframes flyRight {
+      0% { left: -80px; opacity: 0; transform: translateY(0) rotate(0deg); }
+      10% { opacity: 1; }
+      50% { left: 110vw; transform: translateY(-20px) rotate(15deg); opacity: 1;}
+      90% { opacity: 1; }
+      100% { left: 110vw; opacity: 0; transform: translateY(0) rotate(0deg); }
+    }
+
+    /* Simple bird shape using CSS */
+    .bird {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-origin: center;
+      animation: flapWings 1s ease-in-out infinite;
+    }
+
+    .wing {
+      position: absolute;
+      background: white;
+      width: 20px;
+      height: 8px;
+      border-radius: 10px 10px 0 0;
+      top: 15px;
+      left: 20px;
+      transform-origin: left center;
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .wing.right {
+      left: auto;
+      right: 20px;
+      border-radius: 10px 10px 0 0;
+      transform-origin: right center;
+    }
+
+    @keyframes flapWings {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(20deg); }
     }
 
     section {
@@ -127,6 +186,8 @@
       border: 1px solid var(--accent);
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 10;
     }
 
     section h2 {
@@ -166,57 +227,42 @@
       text-align: center;
       padding: 1rem;
       margin-top: 3rem;
+      position: relative;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img class="bird-gif" src="https://i.ibb.co/gPTQ1d5/bird-fly.gif" alt="Flying Bird" />
-    <img class="bird-gif" src="https://i.ibb.co/gPTQ1d5/bird-fly.gif" alt="Flying Bird" />
-    <img class="bird-gif" src="https://i.ibb.co/gPTQ1d5/bird-fly.gif" alt="Flying Bird" />
+    <!-- 3 animated birds flying across -->
+    <div class="bird-container" style="animation-delay: 0s;">
+      <div class="bird">
+        <div class="wing"></div>
+        <div class="wing right"></div>
+      </div>
+    </div>
+    <div class="bird-container" style="animation-delay: 7s;">
+      <div class="bird">
+        <div class="wing"></div>
+        <div class="wing right"></div>
+      </div>
+    </div>
+    <div class="bird-container" style="animation-delay: 14s;">
+      <div class="bird">
+        <div class="wing"></div>
+        <div class="wing right"></div>
+      </div>
+    </div>
+
     <h1>Darpan Vastra</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#collections">Collections</a>
       <a href="#contact">Contact</a>
-      <a href="https://instagram.com/_darpanvastra_" target="_blank">Instagram</a>
+      <a href="https://instagram.com/_darpanvastra_" target="_blank" rel="noopener noreferrer">Instagram</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Where you see yourself in every thread.</h2>
-  </section>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      Darpan Vastra is a reflection of timeless Indian tradition. We offer curated apparel for women and girls seeking elegance in everyday and festive moments. From intricate kurtas to flowing sarees, every piece is crafted with love and culture.
-    </p>
-  </section>
-
-  <section id="collections">
-    <h2>Our Collections</h2>
-    <ul>
-      <li>• Traditional Sarees and Salwar Suits</li>
-      <li>• Everyday Kurtis and Sets</li>
-      <li>• Occasion & Festive Wear</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <ul>
-      <li>📞 R: <a href="tel:+919327045197">9327045197</a></li>
-      <li>📞 D: <a href="tel:+918849699764">8849699764</a></li>
-      <li>📧 Email: <a href="mailto:namaste.darpan@gmail.com">namaste.darpan@gmail.com</a></li>
-      <li>📸 Instagram: <a href="https://instagram.com/_darpanvastra_" target="_blank">@_darpanvastra_</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 Darpan Vastra — Tradition in Every Thread</p>
-  </footer>
-
-</body>
-</html>
+    <div
