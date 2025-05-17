@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Darpan Vastra - Tradition Woven in Style</title>
-  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Crimson+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Crimson+Text&family=Yatra+One&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #8B3A3A;
       --secondary: #fff9f4;
-      --text-dark: #3a2f2f;
       --accent: #e6d0c4;
       --gold: #c7a17a;
+      --text-dark: #3a2f2f;
     }
 
     * {
@@ -31,18 +30,26 @@
     header {
       background: var(--primary);
       color: white;
+      padding: 2rem;
       text-align: center;
-      padding: 2rem 1rem;
+      border-bottom: 5px double var(--gold);
       position: relative;
-      overflow: hidden;
     }
 
     header h1 {
       font-family: 'Yatra One', cursive;
-      font-size: 3.5rem;
-      z-index: 2;
-      position: relative;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .birds-decor {
+      margin-top: 1rem;
+    }
+
+    .birds-decor img {
+      height: 60px;
+      margin: 0 10px;
     }
 
     nav a {
@@ -56,70 +63,53 @@
       text-decoration: underline;
     }
 
-    .bird {
-      position: absolute;
-      width: 60px;
-      top: 10px;
-      animation: fly 30s linear infinite;
-      z-index: 1;
-    }
-
-    .bird:nth-child(1) { left: -80px; animation-delay: 0s; }
-    .bird:nth-child(2) { left: -160px; animation-delay: 10s; }
-    .bird:nth-child(3) { left: -240px; animation-delay: 20s; }
-
-    @keyframes fly {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(130vw); }
-    }
-
     .hero {
-      position: relative;
+      background: url('https://i.ibb.co/gym3kDc/beach-sunset-women-clothes.jpg') center/cover no-repeat;
       height: 100vh;
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      text-align: center;
       color: white;
-    }
-
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-      animation: starsMove 100s linear infinite;
-      z-index: 0;
-      opacity: 0.3;
-    }
-
-    @keyframes starsMove {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 1000px; }
     }
 
     .hero h2 {
       font-size: 2.5rem;
-      font-family: 'Yatra One', cursive;
-      z-index: 2;
-      text-align: center;
-      animation: floatText 5s ease-in-out infinite alternate;
-      color: #fff;
-    }
-
-    @keyframes floatText {
-      0% { transform: translateY(10px); }
-      100% { transform: translateY(-10px); }
+      font-family: 'Playfair Display', serif;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      color: #fffaf0;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
 
     section {
       max-width: 800px;
       margin: 2rem auto;
-      padding: 1.5rem;
+      padding: 1rem;
       background: #fffefc;
+      border: 1px solid var(--accent);
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    #contact ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #contact li {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    #contact a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -129,23 +119,15 @@
       padding: 1rem;
       margin-top: 3rem;
     }
-
-    #contact a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    #contact li {
-      margin-bottom: 0.5rem;
-    }
   </style>
 </head>
 <body>
   <header>
-    <img class="bird" src="https://i.ibb.co/ZmFHZDc/bird.gif" alt="Bird">
-    <img class="bird" src="https://i.ibb.co/ZmFHZDc/bird.gif" alt="Bird">
-    <img class="bird" src="https://i.ibb.co/ZmFHZDc/bird.gif" alt="Bird">
     <h1>Darpan Vastra</h1>
+    <div class="birds-decor">
+      <img src="https://i.ibb.co/XC4xBbr/bird-sketch-left.png" alt="Bird Sketch">
+      <img src="https://i.ibb.co/WfXKP0C/bird-sketch-right.png" alt="Bird Sketch">
+    </div>
     <nav>
       <a href="#about">About</a>
       <a href="#collections">Collections</a>
@@ -155,7 +137,6 @@
   </header>
 
   <section class="hero">
-    <div class="stars"></div>
     <h2>Where you see yourself in every thread.</h2>
   </section>
 
