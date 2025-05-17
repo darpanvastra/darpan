@@ -44,21 +44,16 @@
       border-bottom: 6px double var(--gold);
       box-shadow: 0 4px 10px var(--shadow);
       position: relative;
-      animation: fadeIn 1s ease forwards;
     }
 
-    /* Brand Name styling */
     header h1 {
       font-family: 'Yatra One', cursive;
       font-size: 3.8rem;
       letter-spacing: 3px;
       margin-bottom: 0.3rem;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-      cursor: default;
-      user-select: none;
     }
 
-    /* Tagline */
     header .tagline {
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
@@ -115,8 +110,6 @@
       justify-content: center;
       text-align: center;
       padding: 0 1.5rem;
-      animation: fadeIn 1s ease forwards;
-      animation-delay: 0.3s;
       box-shadow: inset 0 0 150px 40px rgba(199, 161, 122, 0.25);
       border-radius: 20px;
       margin: 2rem auto;
@@ -136,7 +129,6 @@
       max-width: 700px;
       margin: 0 auto;
       line-height: 1.25;
-      user-select: none;
     }
 
     section {
@@ -147,7 +139,6 @@
       border: 2px solid var(--accent);
       border-radius: 18px;
       box-shadow: 0 8px 20px rgba(199, 161, 122, 0.15);
-      animation: fadeIn 1s ease forwards;
     }
 
     section h2 {
@@ -181,7 +172,7 @@
     }
 
     #collections li::before {
-      content: "✓";
+      content: "\2713";
       position: absolute;
       left: 0;
       color: var(--gold);
@@ -189,10 +180,6 @@
       font-size: 1.3rem;
       top: 0;
       line-height: 1;
-    }
-
-    #gallery {
-      padding-bottom: 2rem;
     }
 
     .gallery {
@@ -218,30 +205,10 @@
       box-shadow: 0 14px 30px rgba(199, 161, 122, 0.4);
     }
 
-    #contact ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1.15rem;
-      color: var(--text-dark);
-    }
-
-    #contact li {
-      margin: 0.7rem 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    #contact a {
-      color: var(--primary);
-      text-decoration: none;
+    #contact p {
+      font-size: 1.3rem;
       font-weight: 600;
-      transition: color 0.25s ease;
-    }
-
-    #contact a:hover {
-      text-decoration: underline;
-      color: var(--gold);
+      color: var(--primary);
     }
 
     footer {
@@ -255,19 +222,6 @@
       box-shadow: 0 -4px 10px var(--shadow);
     }
 
-    /* Fade-in animation */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
       header h1 {
         font-size: 3rem;
@@ -304,7 +258,6 @@
   <header>
     <h1>Darpan Vastra</h1>
     <div class="tagline">Tradition Woven in Style</div>
-
     <nav>
       <a href="#about">About</a>
       <a href="#collections">Collections</a>
@@ -345,12 +298,7 @@
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <ul>
-      <li>📞 R: <a href="tel:+919327045197">9327045197</a></li>
-      <li>📞 D: <a href="tel:+918849699764">8849699764</a></li>
-      <li>📧 Email: <a href="mailto:namaste.darpan@gmail.com">namaste.darpan@gmail.com</a></li>
-      <li>📸 Instagram: <a href="https://instagram.com/_darpanvastra_" target="_blank" rel="noopener noreferrer">@_darpanvastra_</a></li>
-    </ul>
+    <p>📞 Phone: <a href="tel:+919723639807">9723639807</a></p>
   </section>
 
   <footer>
