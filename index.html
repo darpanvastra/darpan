@@ -107,6 +107,21 @@
     50% { border-color: var(--accent) }
   }
 
+  /* New tagline fade-in */
+  .tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    color: var(--accent);
+    opacity: 0;
+    animation: fadeIn 3s ease forwards 4.5s;
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
   /* Contact section */
   #contact {
     background: var(--secondary);
@@ -153,6 +168,9 @@
       font-size: 1.8rem;
       max-width: 22ch;
     }
+    .tagline {
+      font-size: 1.1rem;
+    }
   }
 </style>
 </head>
@@ -173,6 +191,7 @@
     <h2 class="animated-text">
       Embrace Tradition. Celebrate Everyday Elegance.
     </h2>
+    <p class="tagline">Where you see yourself in every thread.</p>
   </div>
 </section>
 
