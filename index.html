@@ -2,20 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Darpan Vastra - Tradition Woven in Style</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Crimson+Text&family=Yatra+One&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #8B3A3A;
-      --secondary: #f9f3ef;
+      --secondary: #fff9f4;
       --accent: #e6d0c4;
       --gold: #c7a17a;
       --text-dark: #3a2f2f;
-      --shadow: rgba(139, 58, 58, 0.3);
     }
 
     * {
@@ -25,245 +21,116 @@
     }
 
     body {
-      font-family: 'Crimson Text', serif;
-      background: linear-gradient(135deg, #f7f1e9 0%, #eedfcc 100%);
+      font-family: 'Playfair Display', serif;
+      background: url('https://images.unsplash.com/photo-1520975911449-358e7d312e66?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: var(--text-dark);
       overflow-x: hidden;
-      line-height: 1.6;
-      min-height: 100vh;
-      background-image:
-        radial-gradient(circle at top left, rgba(199, 161, 122, 0.1), transparent 70%),
-        radial-gradient(circle at bottom right, rgba(199, 161, 122, 0.15), transparent 70%);
     }
 
     header {
-      background: var(--primary);
+      background: rgba(139, 58, 58, 0.9);
       color: white;
-      padding: 2.5rem 1rem;
+      padding: 2rem;
       text-align: center;
-      border-bottom: 6px double var(--gold);
-      box-shadow: 0 4px 10px var(--shadow);
-      position: relative;
+      border-bottom: 5px double var(--gold);
     }
 
     header h1 {
       font-family: 'Yatra One', cursive;
-      font-size: 3.8rem;
-      letter-spacing: 3px;
-      margin-bottom: 0.3rem;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-    }
-
-    header .tagline {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      letter-spacing: 1.5px;
-      font-weight: 600;
-      color: var(--gold);
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.12);
-      margin-bottom: 1.5rem;
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     }
 
     nav {
-      margin-top: 0;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--gold);
+      margin-top: 15px;
     }
 
     nav a {
       color: var(--gold);
-      margin: 0 18px;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      transition: color 0.3s ease, transform 0.2s ease;
-      position: relative;
-      padding-bottom: 4px;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--gold);
-      transition: width 0.3s ease;
+      font-weight: bold;
     }
 
     nav a:hover {
-      color: #f9e4b7;
-      transform: translateY(-3px);
-    }
-
-    nav a:hover::after {
-      width: 100%;
+      text-decoration: underline;
     }
 
     .hero {
-      background: linear-gradient(120deg, #fff6e8, #f3e5d4);
-      height: 75vh;
+      background: rgba(255, 249, 244, 0.85);
+      min-height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 1.5rem;
-      box-shadow: inset 0 0 150px 40px rgba(199, 161, 122, 0.25);
-      border-radius: 20px;
-      margin: 2rem auto;
-      max-width: 900px;
+      padding: 3rem 1rem;
     }
 
     .hero h2 {
-      font-size: 3rem;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
+      font-family: 'Yatra One', cursive;
+      font-size: 2.8rem;
       color: var(--primary);
-      padding: 1.8rem 3rem;
-      border: 3px solid var(--gold);
-      background-color: #fffdf9cc;
-      border-radius: 20px;
-      box-shadow: 0 6px 16px rgba(199, 161, 122, 0.3);
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.25;
+      padding: 1rem 2rem;
+      border: 2px solid var(--gold);
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     section {
-      max-width: 820px;
-      margin: 3rem auto;
-      padding: 2rem 2.5rem;
-      background: #fffefc;
-      border: 2px solid var(--accent);
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(199, 161, 122, 0.15);
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255, 254, 252, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     section h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Yatra One', cursive;
+      font-size: 2rem;
       color: var(--primary);
-      font-size: 2.4rem;
       margin-bottom: 1rem;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 8px;
-      letter-spacing: 1px;
     }
 
-    #about p {
-      font-size: 1.22rem;
-      line-height: 1.8;
-      color: var(--text-dark);
-    }
-
-    #collections ul {
+    ul {
       list-style: none;
-      padding-left: 1rem;
-      font-size: 1.18rem;
-      color: var(--text-dark);
-      line-height: 1.7;
+      padding-left: 0;
     }
 
-    #collections li {
-      margin: 0.8rem 0;
-      position: relative;
-      padding-left: 1.3rem;
+    ul li {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
 
-    #collections li::before {
-      content: "\2713";
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-weight: bold;
-      font-size: 1.3rem;
-      top: 0;
-      line-height: 1;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      justify-content: center;
-    }
-
-    .gallery img {
-      max-width: 220px;
-      width: 100%;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(199, 161, 122, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      object-fit: cover;
-      height: 270px;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.07);
-      box-shadow: 0 14px 30px rgba(199, 161, 122, 0.4);
-    }
-
-    #contact p {
-      font-size: 1.3rem;
-      font-weight: 600;
+    #contact a {
       color: var(--primary);
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      text-decoration: underline;
     }
 
     footer {
       background: var(--primary);
       color: white;
       text-align: center;
-      padding: 1.2rem;
-      margin-top: 4rem;
-      font-size: 1rem;
-      font-family: 'Crimson Text', serif;
-      box-shadow: 0 -4px 10px var(--shadow);
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 3rem;
-      }
-      .hero h2 {
-        font-size: 2rem;
-        padding: 1rem 1.5rem;
-      }
-      section {
-        margin: 2rem 1rem;
-        padding: 1.5rem 1.8rem;
-      }
-      .gallery img {
-        max-width: 140px;
-        height: 180px;
-      }
-      nav a {
-        margin: 0 10px;
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 400px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      .hero h2 {
-        font-size: 1.6rem;
-      }
+      padding: 1rem;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Darpan Vastra</h1>
-    <div class="tagline">Tradition Woven in Style</div>
     <nav>
       <a href="#about">About</a>
       <a href="#collections">Collections</a>
-      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
-      <a href="https://instagram.com/_darpanvastra_" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://instagram.com/_darpanvastra_" target="_blank">Instagram</a>
     </nav>
   </header>
 
@@ -274,31 +141,27 @@
   <section id="about">
     <h2>About Us</h2>
     <p>
-      Darpan Vastra is a reflection of timeless Indian tradition. We offer handcrafted clothing that celebrates culture and elegance, tailored for women and girls who cherish everyday grace and festive charm.
+      Darpan Vastra is a reflection of timeless Indian tradition. We offer curated apparel for women and girls seeking elegance in everyday and festive moments. From intricate kurtas to flowing sarees, every piece is crafted with love and culture.
     </p>
   </section>
 
   <section id="collections">
     <h2>Our Collections</h2>
     <ul>
-      <li>Traditional Sarees and Salwar Suits</li>
-      <li>Everyday Kurtis and Sets</li>
-      <li>Occasion & Festive Wear</li>
+      <li>• Traditional Sarees and Salwar Suits</li>
+      <li>• Everyday Kurtis and Sets</li>
+      <li>• Occasion & Festive Wear</li>
     </ul>
-  </section>
-
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="https://i.ibb.co/0QqPb3X/fashion-dress-1.png" alt="Elegant Saree" />
-      <img src="https://i.ibb.co/wrsd2ft/fashion-dress-2.png" alt="Festive Salwar Suit" />
-      <img src="https://i.ibb.co/sR1Xw5C/fashion-dress-3.png" alt="Everyday Kurti" />
-    </div>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>📞 Phone: <a href="tel:+919723639807">9723639807</a></p>
+    <ul>
+      <li>📞 R: <a href="tel:+919327045197">9327045197</a></li>
+      <li>📞 D: <a href="tel:+918849699764">8849699764</a></li>
+      <li>📧 Email: <a href="mailto:namaste.darpan@gmail.com">namaste.darpan@gmail.com</a></li>
+      <li>📸 Instagram: <a href="https://instagram.com/_darpanvastra_" target="_blank">@_darpanvastra_</a></li>
+    </ul>
   </section>
 
   <footer>
