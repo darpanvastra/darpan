@@ -67,14 +67,14 @@
     justify-content: center;
     text-align: center;
     position: relative;
-    color: var(--accent);
+    color: var(--primary);
   }
   /* Overlay with warm soft color */
   .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(107, 66, 38, 0.5);
+    background: rgba(107, 66, 38, 0.3);
     z-index: 1;
   }
   .hero-content {
@@ -84,37 +84,21 @@
     padding: 0 1rem;
   }
 
-  /* New animated message: slide-up + glowing pulse */
+  /* Simple fade-in + slight slide up animation */
   .animated-message {
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
     max-width: 30ch;
     margin: 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #b76e79; /* warm dusty pink */
-    animation: slideUpGlow 4s ease-in-out infinite alternate;
-    text-shadow: 0 0 8px rgba(183,110,121, 0.7);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 2s ease forwards;
   }
 
-  @keyframes slideUpGlow {
-    0% {
-      transform: translateY(20px);
-      opacity: 0;
-      color: #b76e79;
-      text-shadow: 0 0 0 rgba(183,110,121, 0);
-    }
-    50% {
-      transform: translateY(0);
+  @keyframes fadeSlideUp {
+    to {
       opacity: 1;
-      color: #d9a066; /* soft gold */
-      text-shadow: 0 0 12px rgba(217,160,102, 0.9);
-    }
-    100% {
       transform: translateY(0);
-      opacity: 1;
-      color: #b76e79;
-      text-shadow: 0 0 8px rgba(183,110,121, 0.7);
     }
   }
 
